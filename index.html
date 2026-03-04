@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بطل الألوان</title>
+
+<style>
+
+body{
+font-family: Arial;
+text-align:center;
+background:#f2f2f2;
+}
+
+button{
+font-size:30px;
+padding:20px;
+margin:20px;
+border-radius:20px;
+border:none;
+width:150px;
+}
+
+.red{
+background:red;
+color:white;
+}
+
+.green{
+background:green;
+color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>بطل الألوان</h1>
+
+<h2 id="text">اضغط اللون</h2>
+
+<button class="red" onclick="choose('red')">أحمر</button>
+<button class="green" onclick="choose('green')">أخضر</button>
+
+<script>
+
+let colors=["red","green"];
+let current="";
+
+function newRound(){
+
+current=colors[Math.floor(Math.random()*2)];
+
+document.getElementById("text").innerHTML="اضغط "+(current=="red"?"أحمر":"أخضر");
+
+}
+
+function choose(c){
+
+if(c==current){
+alert("صح!");
+}else{
+alert("خطأ");
+}
+
+newRound();
+
+}
+
+newRound();
+
+</script>
+
+</body>
+</html>
